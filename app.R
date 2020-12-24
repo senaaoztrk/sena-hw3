@@ -66,7 +66,7 @@ server <- function(input, output) {
   output$mpgPlot <- renderPlot({
     ggplot(data=mtcars, mapping=aes(mpg)) + 
       geom_histogram(binwidth=5, col="white", fill ="steelblue") +
-      facet_wrap(~cyl , nrow = 3)
+      facet_wrap(~mpgData[[input$variable]] , nrow = 3)
   })
   
 }
